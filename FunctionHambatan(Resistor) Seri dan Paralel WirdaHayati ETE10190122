@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+int main ( )
+{
+	float pilih , MenuUtama, Rseri, R1, R2, R3, Rparalel;
+	char status;
+	
+	Menu :
+		cout << "\n\n\t\t----------- Rumus Hambatan Seri dan Paralel ------------" << endl;
+		cout << "Menu : " << endl;
+		cout << "1. Hambatan Seri " << endl;
+		cout << "2. Hambatan Paralel " << endl;
+		cout << "Rumus yang Anda Pilih adalah Menu Nomor : ";
+		cin >> pilih;
+		
+		if (pilih==1)
+		{
+			Seri :
+				cout << "\n\n\t\t--------------------- Hambatan Seri ---------------------" << endl;
+				
+				cout << "Masukkan R1 : ";
+				cin >> R1;
+				
+				cout << "Masukkan R2 : ";
+				cin >> R2;
+				
+				cout << "Masukkan R3 : ";
+				cin >> R3;
+				
+				cout << "\n";
+				Rseri = R1 + R2 + R3;
+				cout << "Rumus Rs = R1 + R2 + R3 \n";
+				
+				cout << " Total Hambatan Seri : " << Rseri << endl;
+				cout << "\n\n";
+				
+				cout << "Apakah Anda Ingin Memilih Kembali? (y = ya / t = tidak / m = menu utama) : ";
+				cin >> status;
+				
+				if (status == 'y' || status == 'Y')
+					goto Seri;
+				else if (status == 'm' || status == 'M')
+					goto Menu;
+				else
+					goto end;
+		}
+		else if (pilih==2)
+		{
+			Paralel :
+				cout << "\n\n\t\t------------------- Hambatan Paralel -------------------" << endl;
+				
+				cout << "Masukkan R1 : ";
+				cin >> R1;
+				
+				cout << "Masukkan R2 : ";
+				cin >> R2;
+				
+				cout << "Masukkan R3 : ";
+				cin >> R3;
+				
+				cout << "\n";
+				Rparalel = 1/(1/R1 + 1/R2 + 1/R3);
+				cout << "Rumus Rp = 1/(1/R1 + 1/R2 + 1/R3) \n";
+				
+				cout << " Total Hambatan Paralel : " << Rparalel << endl;
+				cout << "\n\n";
+				
+				cout << "Apakah Anda Ingin Memilih Kembali? (y = ya / t = tidak / m = menu utama) : ";
+				cin >> status;
+				
+				if (status == 'y' || status == 'Y')
+					goto Paralel;
+				else if (status == 'm' || status == 'M')
+					goto Menu;
+				else
+					goto end;
+		}
+		end :
+			cout << "\n\n\t\t--------------------- Terima Kasih ---------------------" << endl;
+			cout << " by : Wirda Hayati " << endl;
+			cout << " Politeknik Unggulan Kalimantan " << endl;
+			cout << "======== Sampai Jumpa ==========" << endl;
+		return 0;
+}
